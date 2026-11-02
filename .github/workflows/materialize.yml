@@ -1,0 +1,39 @@
+name: Materialize pack
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install ffmpeg and fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+
+      - name: Download and check the source tarball
+        run: |
+          curl -fsSL -o /tmp/euphoric-trance-leads-src.tar.gz "https://d.uguu.se/vmnWJsNh.tar.gz"
+          echo "8b4a408280ea0cc99467873e5084b4ea978e3fa92a2167965c29adee6453384e  /tmp/euphoric-trance-leads-src.tar.gz" | sha256sum -c -
+          tar -xzf /tmp/euphoric-trance-leads-src.tar.gz -C "$GITHUB_WORKSPACE"
+
+      - name: Build
+        run: python3 tools/build_pack.py
+
+      - name: Commit rendered assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Add rendered MIDI pack assets [skip ci]"
+          git push
