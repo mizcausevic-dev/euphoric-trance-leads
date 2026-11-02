@@ -4,40 +4,60 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  materialize:
+  duration-text:
+    if: ${{ contains(github.event.head_commit.message, 'duration-text-once') }}
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Install ffmpeg and fonts
+      - name: State the catalog preview as 27.873 seconds
         run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg fonts-dejavu-core
-
-      - name: Download and check the source tarball
-        run: |
-          curl -fsSL -o /tmp/euphoric-trance-leads-src.tar.gz "https://d.uguu.se/acbJEQRu.tar.gz"
-          echo "ca8f93bb39c93ad8efc575ae578017c777471a50f681f58b58a165dde0e713b8  /tmp/euphoric-trance-leads-src.tar.gz" | sha256sum -c -
-          tar -xzf /tmp/euphoric-trance-leads-src.tar.gz -C "$GITHUB_WORKSPACE"
-
-      - name: Build
-        run: python3 tools/build_pack.py
-
-      - name: Commit rendered assets
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          if git diff --cached --quiet; then
-            echo "No file changes to commit."
-          else
-            git commit -m "Add rendered MIDI pack assets [skip ci]"
-            git push
+          set -euo pipefail
+          cat > /tmp/fix_index.py << 'PY'
+          from pathlib import Path
+          path = Path("index.html")
+          text = path.read_text()
+          if "27.83" not in text and text.count("27.873") >= 2:
+              raise SystemExit(0)
+          if text.count("27.83") != 2:
+              raise SystemExit("27.83 count %s" % text.count("27.83"))
+          text = text.replace("27.83", "27.873")
+          if "27.83" in text or text.count("27.873") != 2:
+              raise SystemExit("replace failed")
+          if "Variation A bar 7 uses F#5 (78) for one note into G5." not in text:
+              raise SystemExit("F#5 bar 7 sentence missing")
+          if "\u2014" in text:
+              raise SystemExit("emdash")
+          if "preview, not a master" not in text:
+              raise SystemExit("preview phrase missing")
+          sentence = "The MP3 is 27.873 seconds. preview, not a master. The film is 27.873 seconds and shows preview, not master."
+          if sentence not in text:
+              raise SystemExit("catalog sentence missing")
+          path.write_text(text)
+          PY
+          python3 /tmp/fix_index.py
+          git checkout HEAD~1 -- .github/workflows/materialize.yml
+          if grep -q duration-text-once .github/workflows/materialize.yml; then
+            echo "workflow was not restored"
+            exit 1
           fi
+          git config user.name "mizcausevic-dev"
+          git config user.email "mizcausevic-dev@users.noreply.github.com"
+          git add index.html .github/workflows/materialize.yml
+          git commit -m "State the catalog preview as 27.873 seconds [skip ci]"
+          git push origin HEAD:main
+          git fetch origin gh-pages
+          git checkout --detach origin/gh-pages
+          python3 /tmp/fix_index.py
+          git add index.html
+          git diff --cached --quiet && echo "gh-pages index already correct" && exit 0
+          git commit -m "State the catalog preview as 27.873 seconds [skip ci]"
+          git push origin HEAD:gh-pages
