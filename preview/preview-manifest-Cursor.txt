@@ -1,0 +1,67 @@
+preview, not a master
+{
+  "arrangement_path": "midi/arrangement.mid",
+  "arrangement_sha256": "b80be19fd6f452dfdfb598febcfe874c09670528f1098883cc00107ab6b66459",
+  "encode": "libmp3lame CBR 192 kbps, mono source",
+  "excerpt": {
+    "bars": "1-16, the full container",
+    "end_tick": 61440,
+    "sequencing": "principal lead, harmonic reference, and counterphrase, variation A, for the full 16 bars",
+    "start_tick": 0,
+    "study": "s01",
+    "transposition": "none"
+  },
+  "intermediate_wav": "build/preview.wav",
+  "intermediate_wav_note": "The WAV is gitignored build storage. The delivered preview is the MP3.",
+  "intermediate_wav_sha256": "36de6562ca84ef837ab619913713428019f1492a72a898e079c32f8ee9fe5cbe",
+  "label": "preview, not a master",
+  "listening": "No human listening audition was performed for this build.",
+  "mapping": {
+    "counterphrase": "sine at the written pitch, short attack, held for the written duration",
+    "harmonic-reference": "quieter triangle, slower attack, held for the written duration",
+    "principal-lead": "triangle plus a quiet same-pitch sine, soft attack, held for the written duration"
+  },
+  "mp3_encode_command": [
+    "ffmpeg",
+    "-y",
+    "-i",
+    "/home/runner/work/euphoric-trance-leads/euphoric-trance-leads/build/preview.wav",
+    "-codec:a",
+    "libmp3lame",
+    "-b:a",
+    "192k",
+    "/home/runner/work/euphoric-trance-leads/euphoric-trance-leads/preview/preview.mp3"
+  ],
+  "mp3_path": "preview/preview.mp3",
+  "mp3_sha256": "f86de861573f132600f77994ce3d7df1b1e9f4fff69ccb18c13c77d878e29c17",
+  "pack_id": "euphoric-trance-leads",
+  "program_changes": "No program changes are encoded. A conventional GM player will normally use its default piano program for pitched channels unless configured otherwise; compatible GM channel 10 percussion is treated separately. Player behavior may vary.",
+  "renderer": "simple-synth-1.0.0",
+  "renderer_note": "These voices are preview mappings. They are not encoded in the MIDI file.",
+  "rounding": "sample = floor(seconds * sample_rate + 0.5), computed from tick 0; intervals are not summed",
+  "sample_peak": 11069,
+  "sample_peak_dbfs": -9.426830950271963,
+  "sample_peak_note": "This is a sample peak of the integer mix after scaling. It is not a true-peak measurement and it is not a loudness reading.",
+  "score_seconds": 27.826112,
+  "score_sha256": "fa58dea336dd9562c57c32a4c7e6174ca949257fb23b73aad6202614763dbb01",
+  "seconds_encoded": 27.826122,
+  "source_parts": [
+    {
+      "id": "s01.lead.a",
+      "path": "midi/s01-lifted-fifth/lead-a.mid",
+      "sha256": "f4d07e6cfc9c7e3f3532a5b28205f91aaca8308a8e4566c79f15c03c575e6e0b"
+    },
+    {
+      "id": "s01.harmony.a",
+      "path": "midi/s01-lifted-fifth/harmony-a.mid",
+      "sha256": "1e5cf7971bdc43fade9d47cbb5aeb49caf34f38af8918816305a1682c55f065b"
+    },
+    {
+      "id": "s01.counter.a",
+      "path": "midi/s01-lifted-fifth/counter-a.mid",
+      "sha256": "c3013d0f8589bfa0f2a3f6b3b8ba6dbe8ffde19e764271a1e1fb78a4ae1a228c"
+    }
+  ],
+  "tempo_authority": "encoded MIDI tempo",
+  "tempo_us": 434783
+}

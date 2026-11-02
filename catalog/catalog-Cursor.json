@@ -1,0 +1,1270 @@
+{
+  "arrangement": {
+    "bpm": 138,
+    "container_ticks": 61440,
+    "description": "Study 01 variation A: principal lead, harmonic reference, and counterphrase. The reference parts are not inside the lead file.",
+    "format": 1,
+    "id": "arrangement-preview-s01a",
+    "meter": "4/4",
+    "path": "midi/arrangement.mid",
+    "tempo_us": 434783,
+    "tracks": [
+      {
+        "channel": null,
+        "name": "Conductor",
+        "source_part": null
+      },
+      {
+        "channel": 0,
+        "name": "Principal Lead",
+        "source_part": "s01.lead.a"
+      },
+      {
+        "channel": 1,
+        "name": "Harmonic Reference",
+        "source_part": "s01.harmony.a"
+      },
+      {
+        "channel": 2,
+        "name": "Counterphrase",
+        "source_part": "s01.counter.a"
+      }
+    ]
+  },
+  "c4": 60,
+  "catalog_version": "1.0.0",
+  "container_plan": [
+    {
+      "bars": 16,
+      "bpm": 138,
+      "id": "s01",
+      "seconds": 27.82608695652174
+    },
+    {
+      "bars": 16,
+      "bpm": 136,
+      "id": "s02",
+      "seconds": 28.235294117647058
+    },
+    {
+      "bars": 8,
+      "bpm": 140,
+      "id": "s03",
+      "seconds": 13.714285714285714
+    },
+    {
+      "bars": 16,
+      "bpm": 134,
+      "id": "s04",
+      "seconds": 28.65671641791045
+    },
+    {
+      "bars": 16,
+      "bpm": 132,
+      "id": "s05",
+      "seconds": 29.09090909090909
+    },
+    {
+      "bars": 8,
+      "bpm": 137,
+      "id": "s06",
+      "seconds": 14.014598540145986
+    },
+    {
+      "bars": 16,
+      "bpm": 135,
+      "id": "s07",
+      "seconds": 28.444444444444443
+    },
+    {
+      "bars": 8,
+      "bpm": 139,
+      "id": "s08",
+      "seconds": 13.81294964028777
+    }
+  ],
+  "core_part_count": 16,
+  "core_role": "principal-lead",
+  "generator_version": "1.0.0",
+  "meter": {
+    "bar_ticks": 3840,
+    "denominator": 4,
+    "numerator": 4
+  },
+  "microtiming": "offset is 0; performed_start = nominal_start",
+  "note_policy": "note-only MIDI. No program changes, controllers, pitch bend, or delay data.",
+  "pack_id": "euphoric-trance-leads",
+  "pack_name": "Euphoric Trance Leads",
+  "parts": [
+    {
+      "bpm": 138,
+      "channel": 0,
+      "container_bars": 16,
+      "core": true,
+      "id": "s01.lead.a",
+      "monophonic": true,
+      "notes": 33,
+      "path": "midi/s01-lifted-fifth/lead-a.mid",
+      "role": "principal-lead",
+      "study_id": "s01",
+      "variation": "a"
+    },
+    {
+      "bpm": 138,
+      "channel": 0,
+      "container_bars": 16,
+      "core": true,
+      "id": "s01.lead.b",
+      "monophonic": true,
+      "notes": 31,
+      "path": "midi/s01-lifted-fifth/lead-b.mid",
+      "role": "principal-lead",
+      "study_id": "s01",
+      "variation": "b"
+    },
+    {
+      "bpm": 138,
+      "channel": 1,
+      "container_bars": 16,
+      "core": false,
+      "id": "s01.harmony.a",
+      "monophonic": false,
+      "notes": 18,
+      "path": "midi/s01-lifted-fifth/harmony-a.mid",
+      "role": "harmonic-reference",
+      "study_id": "s01",
+      "variation": "a"
+    },
+    {
+      "bpm": 138,
+      "channel": 1,
+      "container_bars": 16,
+      "core": false,
+      "id": "s01.harmony.b",
+      "monophonic": false,
+      "notes": 24,
+      "path": "midi/s01-lifted-fifth/harmony-b.mid",
+      "role": "harmonic-reference",
+      "study_id": "s01",
+      "variation": "b"
+    },
+    {
+      "bpm": 138,
+      "channel": 2,
+      "container_bars": 16,
+      "core": false,
+      "id": "s01.counter.a",
+      "monophonic": true,
+      "notes": 9,
+      "path": "midi/s01-lifted-fifth/counter-a.mid",
+      "role": "counterphrase",
+      "study_id": "s01",
+      "variation": "a"
+    },
+    {
+      "bpm": 138,
+      "channel": 2,
+      "container_bars": 16,
+      "core": false,
+      "id": "s01.counter.b",
+      "monophonic": true,
+      "notes": 9,
+      "path": "midi/s01-lifted-fifth/counter-b.mid",
+      "role": "counterphrase",
+      "study_id": "s01",
+      "variation": "b"
+    },
+    {
+      "bpm": 136,
+      "channel": 0,
+      "container_bars": 16,
+      "core": true,
+      "id": "s02.lead.a",
+      "monophonic": true,
+      "notes": 31,
+      "path": "midi/s02-open-fourth/lead-a.mid",
+      "role": "principal-lead",
+      "study_id": "s02",
+      "variation": "a"
+    },
+    {
+      "bpm": 136,
+      "channel": 0,
+      "container_bars": 16,
+      "core": true,
+      "id": "s02.lead.b",
+      "monophonic": true,
+      "notes": 27,
+      "path": "midi/s02-open-fourth/lead-b.mid",
+      "role": "principal-lead",
+      "study_id": "s02",
+      "variation": "b"
+    },
+    {
+      "bpm": 136,
+      "channel": 1,
+      "container_bars": 16,
+      "core": false,
+      "id": "s02.harmony.a",
+      "monophonic": false,
+      "notes": 12,
+      "path": "midi/s02-open-fourth/harmony-a.mid",
+      "role": "harmonic-reference",
+      "study_id": "s02",
+      "variation": "a"
+    },
+    {
+      "bpm": 136,
+      "channel": 1,
+      "container_bars": 16,
+      "core": false,
+      "id": "s02.harmony.b",
+      "monophonic": false,
+      "notes": 24,
+      "path": "midi/s02-open-fourth/harmony-b.mid",
+      "role": "harmonic-reference",
+      "study_id": "s02",
+      "variation": "b"
+    },
+    {
+      "bpm": 136,
+      "channel": 2,
+      "container_bars": 16,
+      "core": false,
+      "id": "s02.counter.a",
+      "monophonic": true,
+      "notes": 8,
+      "path": "midi/s02-open-fourth/counter-a.mid",
+      "role": "counterphrase",
+      "study_id": "s02",
+      "variation": "a"
+    },
+    {
+      "bpm": 136,
+      "channel": 2,
+      "container_bars": 16,
+      "core": false,
+      "id": "s02.counter.b",
+      "monophonic": true,
+      "notes": 8,
+      "path": "midi/s02-open-fourth/counter-b.mid",
+      "role": "counterphrase",
+      "study_id": "s02",
+      "variation": "b"
+    },
+    {
+      "bpm": 140,
+      "channel": 0,
+      "container_bars": 8,
+      "core": true,
+      "id": "s03.lead.a",
+      "monophonic": true,
+      "notes": 10,
+      "path": "midi/s03-held-third/lead-a.mid",
+      "role": "principal-lead",
+      "study_id": "s03",
+      "variation": "a"
+    },
+    {
+      "bpm": 140,
+      "channel": 0,
+      "container_bars": 8,
+      "core": true,
+      "id": "s03.lead.b",
+      "monophonic": true,
+      "notes": 12,
+      "path": "midi/s03-held-third/lead-b.mid",
+      "role": "principal-lead",
+      "study_id": "s03",
+      "variation": "b"
+    },
+    {
+      "bpm": 140,
+      "channel": 1,
+      "container_bars": 8,
+      "core": false,
+      "id": "s03.harmony.a",
+      "monophonic": false,
+      "notes": 12,
+      "path": "midi/s03-held-third/harmony-a.mid",
+      "role": "harmonic-reference",
+      "study_id": "s03",
+      "variation": "a"
+    },
+    {
+      "bpm": 140,
+      "channel": 1,
+      "container_bars": 8,
+      "core": false,
+      "id": "s03.harmony.b",
+      "monophonic": false,
+      "notes": 15,
+      "path": "midi/s03-held-third/harmony-b.mid",
+      "role": "harmonic-reference",
+      "study_id": "s03",
+      "variation": "b"
+    },
+    {
+      "bpm": 140,
+      "channel": 2,
+      "container_bars": 8,
+      "core": false,
+      "id": "s03.counter.a",
+      "monophonic": true,
+      "notes": 8,
+      "path": "midi/s03-held-third/counter-a.mid",
+      "role": "counterphrase",
+      "study_id": "s03",
+      "variation": "a"
+    },
+    {
+      "bpm": 140,
+      "channel": 2,
+      "container_bars": 8,
+      "core": false,
+      "id": "s03.counter.b",
+      "monophonic": true,
+      "notes": 8,
+      "path": "midi/s03-held-third/counter-b.mid",
+      "role": "counterphrase",
+      "study_id": "s03",
+      "variation": "b"
+    },
+    {
+      "bpm": 134,
+      "channel": 0,
+      "container_bars": 16,
+      "core": true,
+      "id": "s04.lead.a",
+      "monophonic": true,
+      "notes": 28,
+      "path": "midi/s04-broken-arc/lead-a.mid",
+      "role": "principal-lead",
+      "study_id": "s04",
+      "variation": "a"
+    },
+    {
+      "bpm": 134,
+      "channel": 0,
+      "container_bars": 16,
+      "core": true,
+      "id": "s04.lead.b",
+      "monophonic": true,
+      "notes": 25,
+      "path": "midi/s04-broken-arc/lead-b.mid",
+      "role": "principal-lead",
+      "study_id": "s04",
+      "variation": "b"
+    },
+    {
+      "bpm": 134,
+      "channel": 1,
+      "container_bars": 16,
+      "core": false,
+      "id": "s04.harmony.a",
+      "monophonic": false,
+      "notes": 12,
+      "path": "midi/s04-broken-arc/harmony-a.mid",
+      "role": "harmonic-reference",
+      "study_id": "s04",
+      "variation": "a"
+    },
+    {
+      "bpm": 134,
+      "channel": 1,
+      "container_bars": 16,
+      "core": false,
+      "id": "s04.harmony.b",
+      "monophonic": false,
+      "notes": 21,
+      "path": "midi/s04-broken-arc/harmony-b.mid",
+      "role": "harmonic-reference",
+      "study_id": "s04",
+      "variation": "b"
+    },
+    {
+      "bpm": 134,
+      "channel": 2,
+      "container_bars": 16,
+      "core": false,
+      "id": "s04.counter.a",
+      "monophonic": true,
+      "notes": 8,
+      "path": "midi/s04-broken-arc/counter-a.mid",
+      "role": "counterphrase",
+      "study_id": "s04",
+      "variation": "a"
+    },
+    {
+      "bpm": 134,
+      "channel": 2,
+      "container_bars": 16,
+      "core": false,
+      "id": "s04.counter.b",
+      "monophonic": true,
+      "notes": 8,
+      "path": "midi/s04-broken-arc/counter-b.mid",
+      "role": "counterphrase",
+      "study_id": "s04",
+      "variation": "b"
+    },
+    {
+      "bpm": 132,
+      "channel": 0,
+      "container_bars": 16,
+      "core": true,
+      "id": "s05.lead.a",
+      "monophonic": true,
+      "notes": 25,
+      "path": "midi/s05-late-call/lead-a.mid",
+      "role": "principal-lead",
+      "study_id": "s05",
+      "variation": "a"
+    },
+    {
+      "bpm": 132,
+      "channel": 0,
+      "container_bars": 16,
+      "core": true,
+      "id": "s05.lead.b",
+      "monophonic": true,
+      "notes": 24,
+      "path": "midi/s05-late-call/lead-b.mid",
+      "role": "principal-lead",
+      "study_id": "s05",
+      "variation": "b"
+    },
+    {
+      "bpm": 132,
+      "channel": 1,
+      "container_bars": 16,
+      "core": false,
+      "id": "s05.harmony.a",
+      "monophonic": false,
+      "notes": 12,
+      "path": "midi/s05-late-call/harmony-a.mid",
+      "role": "harmonic-reference",
+      "study_id": "s05",
+      "variation": "a"
+    },
+    {
+      "bpm": 132,
+      "channel": 1,
+      "container_bars": 16,
+      "core": false,
+      "id": "s05.harmony.b",
+      "monophonic": false,
+      "notes": 21,
+      "path": "midi/s05-late-call/harmony-b.mid",
+      "role": "harmonic-reference",
+      "study_id": "s05",
+      "variation": "b"
+    },
+    {
+      "bpm": 132,
+      "channel": 2,
+      "container_bars": 16,
+      "core": false,
+      "id": "s05.counter.a",
+      "monophonic": true,
+      "notes": 8,
+      "path": "midi/s05-late-call/counter-a.mid",
+      "role": "counterphrase",
+      "study_id": "s05",
+      "variation": "a"
+    },
+    {
+      "bpm": 132,
+      "channel": 2,
+      "container_bars": 16,
+      "core": false,
+      "id": "s05.counter.b",
+      "monophonic": true,
+      "notes": 8,
+      "path": "midi/s05-late-call/counter-b.mid",
+      "role": "counterphrase",
+      "study_id": "s05",
+      "variation": "b"
+    },
+    {
+      "bpm": 137,
+      "channel": 0,
+      "container_bars": 8,
+      "core": true,
+      "id": "s06.lead.a",
+      "monophonic": true,
+      "notes": 16,
+      "path": "midi/s06-neighbor-turn/lead-a.mid",
+      "role": "principal-lead",
+      "study_id": "s06",
+      "variation": "a"
+    },
+    {
+      "bpm": 137,
+      "channel": 0,
+      "container_bars": 8,
+      "core": true,
+      "id": "s06.lead.b",
+      "monophonic": true,
+      "notes": 15,
+      "path": "midi/s06-neighbor-turn/lead-b.mid",
+      "role": "principal-lead",
+      "study_id": "s06",
+      "variation": "b"
+    },
+    {
+      "bpm": 137,
+      "channel": 1,
+      "container_bars": 8,
+      "core": false,
+      "id": "s06.harmony.a",
+      "monophonic": false,
+      "notes": 9,
+      "path": "midi/s06-neighbor-turn/harmony-a.mid",
+      "role": "harmonic-reference",
+      "study_id": "s06",
+      "variation": "a"
+    },
+    {
+      "bpm": 137,
+      "channel": 1,
+      "container_bars": 8,
+      "core": false,
+      "id": "s06.harmony.b",
+      "monophonic": false,
+      "notes": 15,
+      "path": "midi/s06-neighbor-turn/harmony-b.mid",
+      "role": "harmonic-reference",
+      "study_id": "s06",
+      "variation": "b"
+    },
+    {
+      "bpm": 137,
+      "channel": 2,
+      "container_bars": 8,
+      "core": false,
+      "id": "s06.counter.a",
+      "monophonic": true,
+      "notes": 8,
+      "path": "midi/s06-neighbor-turn/counter-a.mid",
+      "role": "counterphrase",
+      "study_id": "s06",
+      "variation": "a"
+    },
+    {
+      "bpm": 137,
+      "channel": 2,
+      "container_bars": 8,
+      "core": false,
+      "id": "s06.counter.b",
+      "monophonic": true,
+      "notes": 8,
+      "path": "midi/s06-neighbor-turn/counter-b.mid",
+      "role": "counterphrase",
+      "study_id": "s06",
+      "variation": "b"
+    },
+    {
+      "bpm": 135,
+      "channel": 0,
+      "container_bars": 16,
+      "core": true,
+      "id": "s07.lead.a",
+      "monophonic": true,
+      "notes": 27,
+      "path": "midi/s07-wide-leap/lead-a.mid",
+      "role": "principal-lead",
+      "study_id": "s07",
+      "variation": "a"
+    },
+    {
+      "bpm": 135,
+      "channel": 0,
+      "container_bars": 16,
+      "core": true,
+      "id": "s07.lead.b",
+      "monophonic": true,
+      "notes": 27,
+      "path": "midi/s07-wide-leap/lead-b.mid",
+      "role": "principal-lead",
+      "study_id": "s07",
+      "variation": "b"
+    },
+    {
+      "bpm": 135,
+      "channel": 1,
+      "container_bars": 16,
+      "core": false,
+      "id": "s07.harmony.a",
+      "monophonic": false,
+      "notes": 12,
+      "path": "midi/s07-wide-leap/harmony-a.mid",
+      "role": "harmonic-reference",
+      "study_id": "s07",
+      "variation": "a"
+    },
+    {
+      "bpm": 135,
+      "channel": 1,
+      "container_bars": 16,
+      "core": false,
+      "id": "s07.harmony.b",
+      "monophonic": false,
+      "notes": 21,
+      "path": "midi/s07-wide-leap/harmony-b.mid",
+      "role": "harmonic-reference",
+      "study_id": "s07",
+      "variation": "b"
+    },
+    {
+      "bpm": 135,
+      "channel": 2,
+      "container_bars": 16,
+      "core": false,
+      "id": "s07.counter.a",
+      "monophonic": true,
+      "notes": 8,
+      "path": "midi/s07-wide-leap/counter-a.mid",
+      "role": "counterphrase",
+      "study_id": "s07",
+      "variation": "a"
+    },
+    {
+      "bpm": 135,
+      "channel": 2,
+      "container_bars": 16,
+      "core": false,
+      "id": "s07.counter.b",
+      "monophonic": true,
+      "notes": 8,
+      "path": "midi/s07-wide-leap/counter-b.mid",
+      "role": "counterphrase",
+      "study_id": "s07",
+      "variation": "b"
+    },
+    {
+      "bpm": 139,
+      "channel": 0,
+      "container_bars": 8,
+      "core": true,
+      "id": "s08.lead.a",
+      "monophonic": true,
+      "notes": 14,
+      "path": "midi/s08-soft-return/lead-a.mid",
+      "role": "principal-lead",
+      "study_id": "s08",
+      "variation": "a"
+    },
+    {
+      "bpm": 139,
+      "channel": 0,
+      "container_bars": 8,
+      "core": true,
+      "id": "s08.lead.b",
+      "monophonic": true,
+      "notes": 14,
+      "path": "midi/s08-soft-return/lead-b.mid",
+      "role": "principal-lead",
+      "study_id": "s08",
+      "variation": "b"
+    },
+    {
+      "bpm": 139,
+      "channel": 1,
+      "container_bars": 8,
+      "core": false,
+      "id": "s08.harmony.a",
+      "monophonic": false,
+      "notes": 9,
+      "path": "midi/s08-soft-return/harmony-a.mid",
+      "role": "harmonic-reference",
+      "study_id": "s08",
+      "variation": "a"
+    },
+    {
+      "bpm": 139,
+      "channel": 1,
+      "container_bars": 8,
+      "core": false,
+      "id": "s08.harmony.b",
+      "monophonic": false,
+      "notes": 15,
+      "path": "midi/s08-soft-return/harmony-b.mid",
+      "role": "harmonic-reference",
+      "study_id": "s08",
+      "variation": "b"
+    },
+    {
+      "bpm": 139,
+      "channel": 2,
+      "container_bars": 8,
+      "core": false,
+      "id": "s08.counter.a",
+      "monophonic": true,
+      "notes": 8,
+      "path": "midi/s08-soft-return/counter-a.mid",
+      "role": "counterphrase",
+      "study_id": "s08",
+      "variation": "a"
+    },
+    {
+      "bpm": 139,
+      "channel": 2,
+      "container_bars": 8,
+      "core": false,
+      "id": "s08.counter.b",
+      "monophonic": true,
+      "notes": 8,
+      "path": "midi/s08-soft-return/counter-b.mid",
+      "role": "counterphrase",
+      "study_id": "s08",
+      "variation": "b"
+    }
+  ],
+  "pitched_range": [
+    48,
+    84
+  ],
+  "ppq": 960,
+  "preview_part_ids": [
+    "s01.lead.a",
+    "s01.harmony.a",
+    "s01.counter.a"
+  ],
+  "range_statement": "The principal lead is monophonic, MIDI 60 to 84. The harmonic reference uses MIDI 48 to 76, at most four notes at once, and is not part of the core count. The counterphrase is monophonic, MIDI 55 to 81, and is also reference only.",
+  "reference_part_count": 32,
+  "reference_roles": [
+    "harmonic-reference",
+    "counterphrase"
+  ],
+  "seed_meaning": "Seeds identify studies. Nothing is random.",
+  "stack_warning": "Use either the combined arrangement or the separate parts. Do not stack the part files on top of the combined file.",
+  "stochastic_draws": 0,
+  "studies": [
+    {
+      "accent": "Velocity sits near 84 in the theme, 96 in the answer, 112 on the rise, and 92 on the return.",
+      "bar_ticks": 3840,
+      "bars": 16,
+      "bpm": 138,
+      "change_bars": [
+        3,
+        1,
+        2,
+        1,
+        1,
+        2,
+        1,
+        3,
+        1,
+        1
+      ],
+      "changes": [
+        "Am",
+        "rest",
+        "F",
+        "C",
+        "rest",
+        "Am",
+        "rest",
+        "F",
+        "Em",
+        "rest"
+      ],
+      "collection_name": "A natural minor",
+      "departures": [],
+      "effective_bpm": 137.99987580011177,
+      "harmonic_rhythm": "Am for three bars, a rest, F, C, a rest, Am, a rest, F, Em, a rest.",
+      "id": "s01",
+      "identity": "The lead waits an eighth, states E then C then A, answers from a lower E, climbs an Am7 arpeggio, and returns to the fifth on the downbeat. Variation B starts on the downbeat with C and reaches C6 before a late return.",
+      "layering": "Three files. The arrangement already contains study 01 variation A. Do not stack the part files on it.",
+      "limitations": "Pair lead A with harmony A and counterphrase A. Variation B is an alternate lead, not a second layer. Harmony and counterphrase are reference files and are not in the core count.",
+      "meter": "4/4",
+      "phrases": [
+        {
+          "bars": 4,
+          "name": "Theme",
+          "start_bar": 0
+        },
+        {
+          "bars": 4,
+          "name": "Answer",
+          "start_bar": 4
+        },
+        {
+          "bars": 4,
+          "name": "Rise",
+          "start_bar": 8
+        },
+        {
+          "bars": 4,
+          "name": "Return",
+          "start_bar": 12
+        }
+      ],
+      "pitch_classes": [
+        9,
+        11,
+        0,
+        2,
+        4,
+        5,
+        7
+      ],
+      "seed": 13801,
+      "slug": "s01-lifted-fifth",
+      "stochastic_draws": 0,
+      "tempo_us": 434783,
+      "title": "Lifted Fifth",
+      "tonal_reference": "A",
+      "tonic": "A",
+      "voicing": "Lead is one note at a time from E4 to C6. Harmony is a separate triad in a lower register. Counterphrase answers in the gaps."
+    },
+    {
+      "accent": "The opening fourth is quieter than the lifted A5. The final D5 is the weight of the phrase, not the loudest note.",
+      "bar_ticks": 3840,
+      "bars": 16,
+      "bpm": 136,
+      "change_bars": [
+        4,
+        4,
+        4,
+        3,
+        1
+      ],
+      "changes": [
+        "Dm",
+        "G",
+        "F",
+        "Dm",
+        "rest"
+      ],
+      "collection_name": "D dorian",
+      "departures": [],
+      "effective_bpm": 136.0001450668214,
+      "harmonic_rhythm": "Dm, G, F, then Dm again, each for four bars except a final rest.",
+      "id": "s02",
+      "identity": "A rising fourth opens the phrase, then a rest, then a lower answer. The return flips the fourth so G falls to D. Variation B starts on A and moves the fourth onto the downbeat.",
+      "layering": "The fourth is the foreground. Harmony is a slow reference. They are separate files.",
+      "limitations": "Pair each lead variation with the harmony and counterphrase of the same letter. The counterphrase is reference only.",
+      "meter": "4/4",
+      "phrases": [
+        {
+          "bars": 4,
+          "name": "Fourth",
+          "start_bar": 0
+        },
+        {
+          "bars": 4,
+          "name": "Fall",
+          "start_bar": 4
+        },
+        {
+          "bars": 4,
+          "name": "Lift",
+          "start_bar": 8
+        },
+        {
+          "bars": 4,
+          "name": "Return",
+          "start_bar": 12
+        }
+      ],
+      "pitch_classes": [
+        2,
+        4,
+        5,
+        7,
+        9,
+        11,
+        0
+      ],
+      "seed": 13602,
+      "slug": "s02-open-fourth",
+      "stochastic_draws": 0,
+      "tempo_us": 441176,
+      "title": "Open Fourth",
+      "tonal_reference": "D",
+      "tonic": "D",
+      "voicing": "Lead stays monophonic between D4 and A5. Harmony holds triads in a lower register and does not double the fourth figure."
+    },
+    {
+      "accent": "The held F5 is moderate. The A5 third is the louder color. The cadence settles.",
+      "bar_ticks": 3840,
+      "bars": 8,
+      "bpm": 140,
+      "change_bars": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "changes": [
+        "F",
+        "Bb",
+        "C",
+        "F"
+      ],
+      "collection_name": "F major",
+      "departures": [],
+      "effective_bpm": 140.00014000014,
+      "harmonic_rhythm": "F, Bb, C, F, two bars each.",
+      "id": "s03",
+      "identity": "Long tones carry the major third as the color, with air between the hold and the cadence. Variation B begins on that third and cuts the holds shorter.",
+      "layering": "Do not fill the rests with delay. The silence is part of the phrase.",
+      "limitations": "Eight bars, not sixteen. The third is a written pitch, not a synth interval. Pair matching variation letters.",
+      "meter": "4/4",
+      "phrases": [
+        {
+          "bars": 4,
+          "name": "Hold",
+          "start_bar": 0
+        },
+        {
+          "bars": 4,
+          "name": "Return",
+          "start_bar": 4
+        }
+      ],
+      "pitch_classes": [
+        5,
+        7,
+        9,
+        10,
+        0,
+        2,
+        4
+      ],
+      "seed": 14003,
+      "slug": "s03-held-third",
+      "stochastic_draws": 0,
+      "tempo_us": 428571,
+      "title": "Held Third",
+      "tonal_reference": "F",
+      "tonic": "F",
+      "voicing": "Lead notes are long and monophonic from Bb4 to A5. Harmony changes on the two-bar groups underneath."
+    },
+    {
+      "accent": "The top B5 is the peak. The return is softer than the climb.",
+      "bar_ticks": 3840,
+      "bars": 16,
+      "bpm": 134,
+      "change_bars": [
+        4,
+        4,
+        1,
+        3,
+        3,
+        1
+      ],
+      "changes": [
+        "Em",
+        "C",
+        "rest",
+        "Am",
+        "Em",
+        "rest"
+      ],
+      "collection_name": "E natural minor",
+      "departures": [],
+      "effective_bpm": 134.00005806669182,
+      "harmonic_rhythm": "Em, C, a bar of rest, Am, Em, a bar of rest.",
+      "id": "s04",
+      "identity": "The line climbs by thirds, falls, leaves a bar empty, and returns with the opening third compressed and higher. Variation B starts on B5 and takes its rest earlier.",
+      "layering": "Counterphrase speaks in the empty bar. It is still a reference part.",
+      "limitations": "The empty bar is intentional. It is not a missing file. Thirds are not a scale run.",
+      "meter": "4/4",
+      "phrases": [
+        {
+          "bars": 4,
+          "name": "Climb",
+          "start_bar": 0
+        },
+        {
+          "bars": 4,
+          "name": "Fall",
+          "start_bar": 4
+        },
+        {
+          "bars": 4,
+          "name": "Break",
+          "start_bar": 8
+        },
+        {
+          "bars": 4,
+          "name": "Return",
+          "start_bar": 12
+        }
+      ],
+      "pitch_classes": [
+        4,
+        6,
+        7,
+        9,
+        11,
+        0,
+        2
+      ],
+      "seed": 13404,
+      "slug": "s04-broken-arc",
+      "stochastic_draws": 0,
+      "tempo_us": 447761,
+      "title": "Broken Arc",
+      "tonal_reference": "E",
+      "tonic": "E",
+      "voicing": "Lead is monophonic from E4 to B5. Harmony drops out with the break."
+    },
+    {
+      "accent": "The beat-3 call is moderate. B5 at the peak is stronger. The final B4 settles.",
+      "bar_ticks": 3840,
+      "bars": 16,
+      "bpm": 132,
+      "change_bars": [
+        4,
+        4,
+        3,
+        1,
+        3,
+        1
+      ],
+      "changes": [
+        "Bm",
+        "G",
+        "A",
+        "rest",
+        "Bm",
+        "rest"
+      ],
+      "collection_name": "B natural minor",
+      "departures": [],
+      "effective_bpm": 132.000132000132,
+      "harmonic_rhythm": "Bm, G, A, a rest, Bm, a rest.",
+      "id": "s05",
+      "identity": "The call sits on beat 3 until the return, which moves the B-D-F# shape onto the downbeat and up to B5. Variation B opens on the downbeat with a sixth and saves the late call for the return.",
+      "layering": "The late entry is the foreground. Harmony may already be sounding. That is support, not a second lead.",
+      "limitations": "Beat 3 is the identity of variation A. Do not quantize it back to the downbeat. Pair matching letters.",
+      "meter": "4/4",
+      "phrases": [
+        {
+          "bars": 4,
+          "name": "Late call",
+          "start_bar": 0
+        },
+        {
+          "bars": 4,
+          "name": "Answer",
+          "start_bar": 4
+        },
+        {
+          "bars": 4,
+          "name": "Peak",
+          "start_bar": 8
+        },
+        {
+          "bars": 4,
+          "name": "Downbeat return",
+          "start_bar": 12
+        }
+      ],
+      "pitch_classes": [
+        11,
+        1,
+        2,
+        4,
+        6,
+        7,
+        9
+      ],
+      "seed": 13205,
+      "slug": "s05-late-call",
+      "stochastic_draws": 0,
+      "tempo_us": 454545,
+      "title": "Late Call",
+      "tonal_reference": "B",
+      "tonic": "B",
+      "voicing": "Lead is monophonic from F#4 to B5. Harmony is a slow reference and does not state the call."
+    },
+    {
+      "accent": "The neighbor is lighter than the G it decorates. The F# is firm, and the G after it is the arrival.",
+      "bar_ticks": 3840,
+      "bars": 8,
+      "bpm": 137,
+      "change_bars": [
+        3,
+        2,
+        1,
+        2
+      ],
+      "changes": [
+        "Gm",
+        "Eb",
+        "rest",
+        "Gm"
+      ],
+      "collection_name": "G natural minor",
+      "departures": [
+        "Variation A bar 6 uses F#5 (78) for one note into G5. It is flagged. No other note leaves G natural minor."
+      ],
+      "effective_bpm": 137.00006393336318,
+      "harmonic_rhythm": "Gm, Eb, a rest, Gm.",
+      "id": "s06",
+      "identity": "A neighbor turn around G, a rest, then one flagged F#5 into G5. Variation B turns downward to F and stays inside the collection, with a different rhythm.",
+      "layering": "The chromatic note is only in the lead file for variation A. Counterphrase does not copy it.",
+      "limitations": "The F# is one flagged departure in variation A only. Do not treat it as part of the collection. Eight bars.",
+      "meter": "4/4",
+      "phrases": [
+        {
+          "bars": 4,
+          "name": "Neighbor",
+          "start_bar": 0
+        },
+        {
+          "bars": 4,
+          "name": "Turn",
+          "start_bar": 4
+        }
+      ],
+      "pitch_classes": [
+        7,
+        9,
+        10,
+        0,
+        2,
+        3,
+        5
+      ],
+      "seed": 13706,
+      "slug": "s06-neighbor-turn",
+      "stochastic_draws": 0,
+      "tempo_us": 437956,
+      "title": "Neighbor Turn",
+      "tonal_reference": "G",
+      "tonic": "G",
+      "voicing": "Lead is monophonic. The neighbor is a short upper or lower tone, not a scale. Harmony stays inside the collection, including under the F#."
+    },
+    {
+      "accent": "The leap's top note is stronger than the takeoff. The final C4 is quiet.",
+      "bar_ticks": 3840,
+      "bars": 16,
+      "bpm": 135,
+      "change_bars": [
+        4,
+        4,
+        3,
+        1,
+        3,
+        1
+      ],
+      "changes": [
+        "C",
+        "F",
+        "Am",
+        "rest",
+        "C",
+        "rest"
+      ],
+      "collection_name": "C major without B",
+      "departures": [],
+      "effective_bpm": 135.000135000135,
+      "harmonic_rhythm": "C, F, Am, a rest, C, a rest. No B is written.",
+      "id": "s07",
+      "identity": "A leap from C4 to A5, a rest, and a two-note answer. The return leaps downward. Variation B leaps from C5 down to E4 and brings C6 in after a rest.",
+      "layering": "Wide space in the lead is not a cue for a scale. The counterphrase is a short reference in the gaps.",
+      "limitations": "B is outside the collection and is not used. The leap is the motif. Do not fill it with passing tones.",
+      "meter": "4/4",
+      "phrases": [
+        {
+          "bars": 4,
+          "name": "Leap",
+          "start_bar": 0
+        },
+        {
+          "bars": 4,
+          "name": "Answer",
+          "start_bar": 4
+        },
+        {
+          "bars": 4,
+          "name": "Breath",
+          "start_bar": 8
+        },
+        {
+          "bars": 4,
+          "name": "Inverted return",
+          "start_bar": 12
+        }
+      ],
+      "pitch_classes": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        9
+      ],
+      "seed": 13507,
+      "slug": "s07-wide-leap",
+      "stochastic_draws": 0,
+      "tempo_us": 444444,
+      "title": "Wide Leap",
+      "tonal_reference": "C",
+      "tonic": "C",
+      "voicing": "Lead is monophonic from C4 to C6. Harmony uses C, F, and Am only."
+    },
+    {
+      "accent": "The opening is the quietest lead in the pack. B5 is the only strong peak. The low return is gentle.",
+      "bar_ticks": 3840,
+      "bars": 8,
+      "bpm": 139,
+      "change_bars": [
+        3,
+        2,
+        1,
+        2
+      ],
+      "changes": [
+        "F#m",
+        "D",
+        "rest",
+        "F#m"
+      ],
+      "collection_name": "F# natural minor",
+      "departures": [],
+      "effective_bpm": 138.9998957500782,
+      "harmonic_rhythm": "F#m, D, a rest, F#m.",
+      "id": "s08",
+      "identity": "A soft call on beat 2, a peak on B5, a bar of rest, and a return an octave lower. Variation B starts low on the downbeat and saves the high B for late in the phrase.",
+      "layering": "The lower return is the same role, not a new part. Counterphrase stays a reference.",
+      "limitations": "Eight bars. The octave return is written out. It is not a transpose of the whole file. Pair matching letters.",
+      "meter": "4/4",
+      "phrases": [
+        {
+          "bars": 4,
+          "name": "Soft call",
+          "start_bar": 0
+        },
+        {
+          "bars": 4,
+          "name": "Return",
+          "start_bar": 4
+        }
+      ],
+      "pitch_classes": [
+        6,
+        8,
+        9,
+        11,
+        1,
+        2,
+        4
+      ],
+      "seed": 13908,
+      "slug": "s08-soft-return",
+      "stochastic_draws": 0,
+      "tempo_us": 431655,
+      "title": "Soft Return",
+      "tonal_reference": "F#",
+      "tonic": "F#",
+      "voicing": "Lead is monophonic from F#4 to B5. Harmony is F#m then D, and it rests before the return."
+    }
+  ]
+}
