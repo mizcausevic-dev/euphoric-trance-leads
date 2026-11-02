@@ -9,29 +9,30 @@
     "path": "midi/arrangement.mid",
     "tempo_us": 434783,
     "tracks": [
-      {
-        "channel": null,
-        "name": "Conductor",
-        "source_part": null
-      },
-      {
-        "channel": 0,
-        "name": "Principal Lead",
-        "source_part": "s01.lead.a"
-      },
-      {
-        "channel": 1,
-        "name": "Harmonic Reference",
-        "source_part": "s01.harmony.a"
-      },
-      {
-        "channel": 2,
-        "name": "Counterphrase",
-        "source_part": "s01.counter.a"
-      }
+      {"channel": null, "name": "Conductor", "source_part": null},
+      {"channel": 0, "name": "Principal Lead", "source_part": "s01.lead.a"},
+      {"channel": 1, "name": "Harmonic Reference", "source_part": "s01.harmony.a"},
+      {"channel": 2, "name": "Counterphrase", "source_part": "s01.counter.a"}
     ]
   },
+  "c4": 60,
+  "catalog_version": "1.0.0",
+  "core_part_count": 16,
+  "core_role": "principal-lead",
+  "generator_version": "1.0.0",
+  "meter": {"bar_ticks": 3840, "denominator": 4, "numerator": 4},
+  "microtiming": "offset is 0; performed_start = nominal_start",
+  "note_policy": "note-only MIDI. No program changes, controllers, pitch bend, or delay data.",
   "pack_id": "euphoric-trance-leads",
   "pack_name": "Euphoric Trance Leads",
-  "note": "RESTORE IN PROGRESS"
+  "ppq": 960,
+  "reference_part_count": 32,
+  "reference_roles": ["harmonic-reference", "counterphrase"],
+  "seed_meaning": "Seeds identify studies. Nothing is random.",
+  "stack_warning": "Use either the combined arrangement or the separate parts. Do not stack the part files on top of the combined file.",
+  "stochastic_draws": 0,
+  "studies": [
+    {"id": "s06", "title": "Neighbor Turn", "departures": ["Variation A bar 7 uses F#5 (78) for one note into G5. It is flagged. No other note leaves G natural minor."]}
+  ],
+  "restore_note": "INCOMPLETE DO NOT KEEP"
 }
