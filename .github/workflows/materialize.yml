@@ -23,8 +23,8 @@ jobs:
 
       - name: Download and check the source tarball
         run: |
-          curl -fsSL -o /tmp/euphoric-trance-leads-src.tar.gz "https://d.uguu.se/vmnWJsNh.tar.gz"
-          echo "8b4a408280ea0cc99467873e5084b4ea978e3fa92a2167965c29adee6453384e  /tmp/euphoric-trance-leads-src.tar.gz" | sha256sum -c -
+          curl -fsSL -o /tmp/euphoric-trance-leads-src.tar.gz "https://d.uguu.se/acbJEQRu.tar.gz"
+          echo "ca8f93bb39c93ad8efc575ae578017c777471a50f681f58b58a165dde0e713b8  /tmp/euphoric-trance-leads-src.tar.gz" | sha256sum -c -
           tar -xzf /tmp/euphoric-trance-leads-src.tar.gz -C "$GITHUB_WORKSPACE"
 
       - name: Build
