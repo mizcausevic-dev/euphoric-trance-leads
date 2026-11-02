@@ -4,92 +4,40 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  duration-text:
-    if: ${{ contains(github.event.head_commit.message, 'duration-text-once') }}
+  materialize:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: State the catalog preview as 27.873 seconds
+      - name: Install ffmpeg and fonts
         run: |
-          set +e
-          {
-            set -euo pipefail
-            git rev-parse HEAD
-            git rev-parse HEAD~1 || true
-            cat > /tmp/fix_index.py << 'PY'
-          from pathlib import Path
-          path = Path("index.html")
-          text = path.read_text()
-          if "27.83" not in text and "27.873" in text:
-              raise SystemExit(0)
-          if text.count("27.83") != 2:
-              raise SystemExit("27.83 count %s" % text.count("27.83"))
-          text = text.replace("27.83", "27.873")
-          if "27.83" in text or "The MP3 is 27.873 seconds. preview, not a master." not in text:
-              raise SystemExit("replace failed")
-          if "Variation A bar 7 uses F#5 (78) for one note into G5." not in text:
-              raise SystemExit("F#5 bar 7 sentence missing")
-          if "\u2014" in text:
-              raise SystemExit("emdash")
-          path.write_text(text)
-          PY
-            python3 /tmp/fix_index.py
-            git config user.name "mizcausevic-dev"
-            git config user.email "mizcausevic-dev@users.noreply.github.com"
-            git add index.html
-            git commit -m "State the catalog preview as 27.873 seconds [skip ci]"
-            git push origin HEAD:main
-            git fetch origin gh-pages
-            git checkout --detach origin/gh-pages
-            python3 /tmp/fix_index.py
-            git add index.html
-            if git diff --cached --quiet; then
-              echo "gh-pages index already correct"
-            else
-              git commit -m "State the catalog preview as 27.873 seconds [skip ci]"
-              git push origin HEAD:gh-pages
-            fi
-          } > /tmp/step.txt 2>&1
-          code=$?
-          if [ "$code" != "0" ]; then
-            python3 - << 'PY'
-          import base64, json, os, urllib.request
-          from pathlib import Path
-          log = Path("/tmp/step.txt").read_bytes()[-50000:]
-          body = json.dumps({
-              "message": "Record the duration step log [skip ci]",
-              "content": base64.b64encode(log).decode(),
-              "branch": "main",
-          }).encode()
-          req = urllib.request.Request(
-              "https://api.github.com/repos/%s/contents/checks/duration-step-log.txt" % os.environ["GITHUB_REPOSITORY"],
-              data=body,
-              method="PUT",
-              headers={
-                  "Authorization": "Bearer %s" % os.environ["GITHUB_TOKEN"],
-                  "Accept": "application/vnd.github+json",
-                  "Content-Type": "application/json",
-                  "User-Agent": "duration-text",
-              },
-          )
-          try:
-              with urllib.request.urlopen(req) as resp:
-                  print(resp.status)
-                  print(resp.read().decode()[:300])
-          except Exception as exc:
-              print("log upload failed", exc)
-              if hasattr(exc, "read"):
-                  print(exc.read().decode()[:1000])
-          PY
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+
+      - name: Download and check the source tarball
+        run: |
+          curl -fsSL -o /tmp/euphoric-trance-leads-src.tar.gz "https://d.uguu.se/acbJEQRu.tar.gz"
+          echo "ca8f93bb39c93ad8efc575ae578017c777471a50f681f58b58a165dde0e713b8  /tmp/euphoric-trance-leads-src.tar.gz" | sha256sum -c -
+          tar -xzf /tmp/euphoric-trance-leads-src.tar.gz -C "$GITHUB_WORKSPACE"
+
+      - name: Build
+        run: python3 tools/build_pack.py
+
+      - name: Commit rendered assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No file changes to commit."
+          else
+            git commit -m "Add rendered MIDI pack assets [skip ci]"
+            git push
           fi
-          cat /tmp/step.txt
-          exit "$code"
