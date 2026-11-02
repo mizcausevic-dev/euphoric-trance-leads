@@ -208,7 +208,7 @@ def studies():
         {**common, "id": "s06", "slug": "s06-neighbor-turn", "title": "Neighbor Turn",
          "bpm": 137, "bars": 8, "tonic": "G", "tonal_reference": "G",
          "collection_name": "G natural minor", "pitch_classes": [7, 9, 10, 0, 2, 3, 5],
-         "departures": ["Variation A bar 6 uses F#5 (78) for one note into G5. It is flagged. No other note leaves G natural minor."],
+         "departures": ["Variation A bar 7 uses F#5 (78) for one note into G5. It is flagged. No other note leaves G natural minor."],
          "seed": 13706,
          "harmonic_rhythm": "Gm, Eb, a rest, Gm.",
          "changes": ["Gm", "Eb", "rest", "Gm"],

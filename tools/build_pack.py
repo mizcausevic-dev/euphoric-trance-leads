@@ -38,10 +38,9 @@ from tools.statements import (  # noqa: E402
 from tools.validate import dump_json, validate_tree, write_midi_files  # noqa: E402
 
 X_BODY = (
-    "Euphoric Trance Leads: 8 studies, phrase arcs, rests, and transformed returns. "
-    "Two lead variations each, note-only MIDI, 132-140 BPM. Harmony stays separate. "
-    "Simple-synth preview of study 01, not a master. "
-    "No listening audition was performed."
+    "Euphoric Trance Leads: Lifted Fifth variation A, 16 bars at 138 BPM. "
+    "Preview 27.873 seconds. preview, not a master. Film: preview, not master. "
+    "No human listening audition was performed for this build."
 )
 
 
@@ -186,7 +185,7 @@ This file is a draft. It has not been posted.
 
 Caption
 
-Euphoric Trance Leads. Eight studies of monophonic lead phrases with arcs, rests, and transformed returns. Two lead variations each, note-only MIDI between 132 and 140 BPM. Harmony and counterphrase are separate reference files. The audio preview is a simple-synth render of study 01, not a master. No listening audition was performed for this build.
+Euphoric Trance Leads. Lifted Fifth, variation A, 16 bars at 138 BPM. The audio preview is 27.873 seconds. preview, not a master. The film shows preview, not master. Eight studies, two lead variations each, note-only MIDI. Harmony and counterphrase are separate reference files. No human listening audition was performed for this build.
 
 Hashtags
 
