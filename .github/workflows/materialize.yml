@@ -1,137 +1,43 @@
-name: Restore wording
+name: Materialize pack
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  restore:
+  materialize:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Restore the full catalog and correct bar 7
+      - name: Install ffmpeg and fonts
         run: |
-          set -euo pipefail
-          git checkout cdfc477ec65711b03c9230e209f17d3d046c9dbd -- catalog/catalog-Cursor.json index.html tools/compose.py tools/build_pack.py midi/validation-Cursor.json
-          python3 - <<'PY'
-          import hashlib
-          import re
-          from pathlib import Path
-          old = "Variation A bar 6 uses F#5 (78) for one note into G5. It is flagged. No other note leaves G natural minor."
-          new = "Variation A bar 7 uses F#5 (78) for one note into G5. It is flagged. No other note leaves G natural minor."
-          for rel in ["catalog/catalog-Cursor.json", "index.html", "tools/compose.py"]:
-              path = Path(rel)
-              text = path.read_text(encoding="utf-8")
-              count = text.count(old)
-              if count != 1:
-                  raise SystemExit(f"{rel} has {count} copies of the old sentence")
-              path.write_text(text.replace(old, new), encoding="utf-8")
-          catalog = Path("catalog/catalog-Cursor.json").read_text(encoding="utf-8")
-          if catalog.count('"id": "s0') < 8:
-              raise SystemExit("catalog is missing studies")
-          if "INCOMPLETE" in catalog or "PLACEHOLDER" in catalog or "RESTORE" in catalog:
-              raise SystemExit("catalog still has a stub marker")
-          digest = hashlib.sha256(Path("catalog/catalog-Cursor.json").read_bytes()).hexdigest()
-          report = Path("midi/validation-Cursor.json")
-          updated, count = re.subn(
-              r'"catalog_sha256": "[0-9a-f]+"',
-              f'"catalog_sha256": "{digest}"',
-              report.read_text(encoding="utf-8"),
-              count=1,
-          )
-          if count != 1:
-              raise SystemExit("validation hash was not updated")
-          report.write_text(updated, encoding="utf-8")
-          pack = Path("tools/build_pack.py")
-          body = pack.read_text(encoding="utf-8")
-          old_body = (
-              'X_BODY = (\n'
-              '    "Euphoric Trance Leads: 8 studies, phrase arcs, rests, and transformed returns. "\n'
-              '    "Two lead variations each, note-only MIDI, 132-140 BPM. Harmony stays separate. "\n'
-              '    "Simple-synth preview of study 01, not a master. "\n'
-              '    "No listening audition was performed."\n'
-              ')'
-          )
-          new_body = (
-              'X_BODY = (\n'
-              '    "Euphoric Trance Leads: Lifted Fifth variation A, 16 bars at 138 BPM. "\n'
-              '    "Preview 27.873 seconds. preview, not a master. Film: preview, not master. "\n'
-              '    "No human listening audition was performed for this build."\n'
-              ')'
-          )
-          if old_body not in body:
-              raise SystemExit("X body block was not found")
-          old_caption = "Euphoric Trance Leads. Eight studies of monophonic lead phrases with arcs, rests, and transformed returns. Two lead variations each, note-only MIDI between 132 and 140 BPM. Harmony and counterphrase are separate reference files. The audio preview is a simple-synth render of study 01, not a master. No listening audition was performed for this build."
-          new_caption = "Euphoric Trance Leads. Lifted Fifth, variation A, 16 bars at 138 BPM. The audio preview is 27.873 seconds. preview, not a master. The film shows preview, not master. Eight studies, two lead variations each, note-only MIDI. Harmony and counterphrase are separate reference files. No human listening audition was performed for this build."
-          if old_caption not in body:
-              raise SystemExit("Instagram caption was not found")
-          pack.write_text(body.replace(old_body, new_body).replace(old_caption, new_caption), encoding="utf-8")
-          PY
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+
+      - name: Download and check the source tarball
+        run: |
+          curl -fsSL -o /tmp/euphoric-trance-leads-src.tar.gz "https://d.uguu.se/acbJEQRu.tar.gz"
+          echo "ca8f93bb39c93ad8efc575ae578017c777471a50f681f58b58a165dde0e713b8  /tmp/euphoric-trance-leads-src.tar.gz" | sha256sum -c -
+          tar -xzf /tmp/euphoric-trance-leads-src.tar.gz -C "$GITHUB_WORKSPACE"
+
+      - name: Build
+        run: python3 tools/build_pack.py
+
+      - name: Commit rendered assets
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add catalog/catalog-Cursor.json index.html tools/compose.py tools/build_pack.py midi/validation-Cursor.json
-          git commit -m "Record F#5 in bar 7 and keep the published preview facts [skip ci]"
-          git push origin HEAD:main
-          git fetch origin gh-pages
-          git checkout -B gh-pages origin/gh-pages
-          python3 - <<'PY'
-          import hashlib
-          import re
-          from pathlib import Path
-          old = "Variation A bar 6 uses F#5 (78) for one note into G5. It is flagged. No other note leaves G natural minor."
-          new = "Variation A bar 7 uses F#5 (78) for one note into G5. It is flagged. No other note leaves G natural minor."
-          for rel in ["catalog/catalog-Cursor.json", "index.html", "tools/compose.py"]:
-              path = Path(rel)
-              text = path.read_text(encoding="utf-8")
-              count = text.count(old)
-              if count != 1:
-                  raise SystemExit(f"gh-pages {rel} has {count} copies")
-              path.write_text(text.replace(old, new), encoding="utf-8")
-          catalog = Path("catalog/catalog-Cursor.json").read_text(encoding="utf-8")
-          if "s08" not in catalog or "PLACEHOLDER" in catalog:
-              raise SystemExit("gh-pages catalog is incomplete")
-          digest = hashlib.sha256(Path("catalog/catalog-Cursor.json").read_bytes()).hexdigest()
-          report = Path("midi/validation-Cursor.json")
-          updated, count = re.subn(
-              r'"catalog_sha256": "[0-9a-f]+"',
-              f'"catalog_sha256": "{digest}"',
-              report.read_text(encoding="utf-8"),
-              count=1,
-          )
-          if count != 1:
-              raise SystemExit("gh-pages validation hash was not updated")
-          report.write_text(updated, encoding="utf-8")
-          pack = Path("tools/build_pack.py")
-          body = pack.read_text(encoding="utf-8")
-          old_caption = "Euphoric Trance Leads. Eight studies of monophonic lead phrases with arcs, rests, and transformed returns. Two lead variations each, note-only MIDI between 132 and 140 BPM. Harmony and counterphrase are separate reference files. The audio preview is a simple-synth render of study 01, not a master. No listening audition was performed for this build."
-          new_caption = "Euphoric Trance Leads. Lifted Fifth, variation A, 16 bars at 138 BPM. The audio preview is 27.873 seconds. preview, not a master. The film shows preview, not master. Eight studies, two lead variations each, note-only MIDI. Harmony and counterphrase are separate reference files. No human listening audition was performed for this build."
-          old_body = (
-              'X_BODY = (\n'
-              '    "Euphoric Trance Leads: 8 studies, phrase arcs, rests, and transformed returns. "\n'
-              '    "Two lead variations each, note-only MIDI, 132-140 BPM. Harmony stays separate. "\n'
-              '    "Simple-synth preview of study 01, not a master. "\n'
-              '    "No listening audition was performed."\n'
-              ')'
-          )
-          new_body = (
-              'X_BODY = (\n'
-              '    "Euphoric Trance Leads: Lifted Fifth variation A, 16 bars at 138 BPM. "\n'
-              '    "Preview 27.873 seconds. preview, not a master. Film: preview, not master. "\n'
-              '    "No human listening audition was performed for this build."\n'
-              ')'
-          )
-          if old_body not in body or old_caption not in body:
-              raise SystemExit("gh-pages build_pack text was not found")
-          pack.write_text(body.replace(old_body, new_body).replace(old_caption, new_caption), encoding="utf-8")
-          PY
-          git add catalog/catalog-Cursor.json index.html tools/compose.py tools/build_pack.py midi/validation-Cursor.json
-          git commit -m "Record F#5 in bar 7 [skip ci]"
-          git push origin HEAD:gh-pages
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No file changes to commit."
+          else
+            git commit -m "Add rendered MIDI pack assets [skip ci]"
+            git push
+          fi
